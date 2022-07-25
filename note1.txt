@@ -1,0 +1,69 @@
+age = 35  #Integer
+PI = 3.14159 #Float
+
+division: always get Float, but if we want to get rid of the Float, then:
+integer_division = 12 // 3;  # 4, this not round, just delete everything after ".".
+
+How to get the remainder ?
+=> use modeuler operator, remainder = 13 % 5.  => dispaly 3 
+
+用' '表示String. 也可以在' '在有“ ”. 
+
+用 """ 可以print长的String. 
+=> multiline = """ HelloWord
+
+My name is Jose. Welcome to my program.
+"""
+
+In python, we cannot combine integer and string together.
+age = 34,
+age_str = str(age)
+print("You are " + age_str)
+----
+or we can use String formatting. # f is allow only python 3.6 or above
+age = 34
+print(f"You are {age}")
+再来一个example:
+name = "jose"
+greeting = f"How are you, {name}?"
+print(greeting)
+But if we change the name later on, the greeting won't change.
+----
+所以我们可以用format:
+name = "Jose"
+final_greeting = "How are you, {}?"
+jose_greeting = final_greeting.format(name) #把name带入
+print(jose_greeting)
+bob_greeting = final_greeting.format("Bob") #把"Bob"带入
+print(bob_greeting)
+
+e.g:
+description = "{} is {} years old."
+print(description.format("Bob", 30))
+=>Bob is 30 years old.
+
+----------
+怎么弄input呢？
+=>
+my_name = "Jose"
+your_name = input("Enter your name: ")
+print(f"Hello {your_name}. My name is {my_name}.")
+---
+但如果input是一个number呢
+=>
+age = input("Enter your age: ")
+print(f"Your name lived for {int(age) * 12} months.")
+-------
+=> (更简便)
+age = int(input("Enter your age: "))
+months = age * 12 #re-useable, maintainable
+print(f"Your name lived for {months} months.")
+
+boolean comparison:
+=>
+age = 20
+is_under_age = age >= 30
+is_over_age = age >= 5
+print(is_over_under)
+print(is_under_age)
+is_twenty = age == 20 #判断age是否等于20，是的话，assign 20给is_twenty

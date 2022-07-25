@@ -1,0 +1,98 @@
+one line arguement:
+=>
+age = int(input("Enter your age: "))
+can_learn_programming = age > 0 and age < 150
+print(f"You can leern it {can_learn_programming}")
+
+print(bool(0)), print(bool("")) will be false
+print(bool(35)), will print True
+
+x = True and False
+print(x) => false #if the first one is true, then it will give the second one
+------
+x = 35 and 0
+print(x) => 0
+------
+and: 会return的first value which is False
+e.g. x = 0 and 35, print(x) => will print 0, since it is False
+if both are true, then print the second one
+
+or gives the first value if it is true. Otherwise, give the second value
+e.g. x = 35 or 0, print(x) => 35
+e.g x = 0 or 35, print(x) => 35
+if both are true, then print the second one
+
+print(not Ture) => false 
+print(not bool(35)) => false
+
+age = int(input("Enter your age: "))
+side_job = True
+print(age > 18 and age < 65 or side_job)
+=> True
+
+List: (Mutable)
+Firend = ["Rolf", "Anne"]
+print(len(friends))
+----
+List of List
+firends = [["Rolf", 24], ["Bob", 30], ["Anne", 27]]
+print(friends[0][0]) => 24
+friends.append("Jen")
+friends.remove("Jen")
+
+Tuples: (immutable, 相等于final的意思, 不能add, remove)
+short_tuple = "Rolf", "Bob"
+a_bit_clearer = ("Rolf", "Bob")
+不同: List是[], tuple是没有括号或者用()
+---
+friends = ("Rolf", "Bob", "Anne")
+friends.append("Jen") #error
+但可以friends = friends + ("Jen",) #注意逗号
+注意: tuple itself did not change
+---
+tuple的表示方法:
+t = (15, ); t = 15, ; 注意t = (15)不是tuple
+
+Set: (不hold order，不contain duplicate element)
+art_friends = {"Rolf", "Anne"}
+art_friends.add("Jen")
+art_friends.remove("Jen")
+---
+art_friends = {"Rolf", "Anne", "Jen"}
+science_friends = {"Jen", "Charlie"}
+为什么要用set, 可以用intersection
+art_but_not_science = art_friends.difference(science_friends) #a.difference(b) => a有的，b没有
+not_in_both = art_friends.symmetric_difference(science_friends) => ["Anne", "Rolf", "Charlie"] #the members not in both
+art_and_science = art_friends.intersection(science_friends) =>"Jen"
+all_friends = art_friends.union(science_friends) => ["Anne", "Rolf", "Charlie", "Jen"] ##without duplicate
+
+dictionaries: store key and value
+firends_age = {"Rolf": 24, "Adam" : 30, "Anne": 27}
+print(friends_age["Rolf"]) => display 24
+firends_age["Bob"] = 20 #add the key to the dictionaries
+friends_age["Rolf"] = 25 #change the value of "Rolf" to 25
+---
+dictionaries cannot have duplicate key, but we can use list of dictionaries.
+friends = (
+    {"name: "Rolf Smith", "age": 24),
+    {"name: "Adam Wool", "age": 30},
+    {"name: "Anne Pun", "age": 27)}
+)
+print(friends[0]["name"]) => first element
+print(friends[1]["name"]) => second element
+print(friends[2]["name"]) => third element
+------
+create a dict: (using a dict keyWord)
+firends = {"Rolf": 24, "Adam" : 30, "Anne": 27}
+firends_age = dict(firends)
+print(firends_age) => {"Rolf": 24, "Adam" : 30, "Anne": 27}
+
+Len and Sum:
+grades = [80, 75, 90, 100]
+total = sum(grades) => get the sum 
+length = len(grades) => 4
+
+join:
+friends = ["Rolf", "Anne", "Charlie"]
+comma_separeted = ", ".join(friends) #get the different value from friend, join them together
+e.g. print(f"My friend are {comma_separeted}.") => My friends are Rolf, Anne, Charlie.
