@@ -1,0 +1,80 @@
+if statement
+e.g. if a == b:
+        print("Hello")  #need some indent
+    elif ... :
+    else:
+        print("ni hao")
+---
+friends = ["Rolf", "Bob"]
+user_name = input("Enter your name: ")
+if user_name in friends:
+    print(f"Hey, {userName} we are friends")
+
+while loop:
+user_input = input("Enter your option: p or q")
+while user_input != "q":
+    if user_input == "p":
+        print("Hello")
+    user_input = input("Enter your option: p or q")
+
+for loop: (Like a forEach loop)
+friends = ["Rolf", "Jen", "Anne"]
+for friend in friends:
+    print(friend)
+----
+for index in range(10): #0,1,2,3,4,5,...9
+    print("hello")
+for index in range(5, 10): #5, 6, 7, 8, 9
+    print("hello")
+for index in range(2, 20, 3): #2, 5, 8, 11, 14, 17), 从2开始，每隔3个print一下
+    print(index)
+
+currencies = 0.8, 1.2 # a tuple
+usd, eur = currencies #first value of tuples and put into the usd, second value of tuples and put into the eur
+#usd now is 0.8, #eur now is 1.2
+---
+e.g. friends = [("Rolf", 25, "single"), ("Anne", 37, "married"), ("Charlie", 31, "single"), ("Bob", 22, "married")]
+for name, age, status in friends:
+    print(f"{name} is {age} years old and the status is {status}")
+-----
+e.g. friends = [("Rolf", 25), ("Anne", 37), ("Charlie", 31), ("Bob", 22)]
+for name in friend:
+    print(name) # will print the key in the dictionaries
+for age in friend.values():
+    print(age) # will print the val in the dictionaries
+for name, age in friend.items():
+    print(f"{name} is {age} years old.") # Get the key and value from the dictionaries
+
+FizzBuzz ex:
+for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0: print("FizzBuzz")
+    elif i %3 == 0: print("Fizz")
+    elif i % 5 == 0: print("Buzz")
+    else: print(i)
+
+for...
+    if ..
+else
+
+check prime:
+for n in range(2, 10): #2 include, 10不include
+    for x in range(2, n): (2,2)的时候直接skip for loop
+        if n % x == 0 : 
+            print(f"{n} equals {x} * {n // x)")
+            break
+    else:
+        print(f"{n} is a prime number")
+=> 2 is a prime number
+=> 3 is a prime number
+=> 4 is equals to 2 * 2
+
+Slicing:
+friends = ["Rolf", "Charlie", "Anna", "Bob", "Jen"]
+print(friends[2:4]) => Anna, Bob. #index 2 is include, index 4 is not include
+print(friends[1:]) #get all the items except the first one (start from index at 1)
+print(friends[:4]) #get all the items except the last one (skip the index at 4)
+print(friends[:]) #give the new list/same list
+print(friends[-3:]) #start from the index of -3, to the end. => ['Anna', 'Bob', 'Jen']
+print(friends[-3:4]) #start from the index of -3, to index of 4 (not include). => ['Anna', 'Bob']
+print(friends[:-2]) #start from the index of 0, to index of -2 (not include, which is 'bob') => ['Rolf‘, 'Charlie', 'Anna']
+print(friends[-3:-1]) => 'Anna', 'Bob'

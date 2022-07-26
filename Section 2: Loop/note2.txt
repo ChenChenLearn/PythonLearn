@@ -1,0 +1,92 @@
+numbers = [0, 1, 2, 3, 4]
+double_numbers = [number * 2 for number in numbers] #更简便的方法写for loop
+----
+double_numbers = [number * 2 for number in range(5)]
+print(double_numbers) => [0,2,4,6,8]
+----
+friends_age = [22, 31, 35, 37]
+age_strings = [f"My friend is {age} years old." for age in friend_age]
+----
+names = ["Rolf", "Bob", "Jen"]
+lower = [name.lower() for name in names] #lower each element in the names list
+----
+friend = input("Enter your friend name: ")
+friends = ["Rolf", "Bob", "Jen", "Charlie", "Anne"]
+friends_lower = [name.lower() for name in friends]
+if friend.lower() in friends:
+    print(f"{friend} is one your friends.")
+
+ages = [22, 35, 27, 21, 20]
+odds = [age for age in ages] #put everything from ages and put it into odds
+---
+odds = [age for age in ages if age % 2 == 1] # condition 放在for的后面
+odds = [if age % 2 == 1 then age else age + 1 for age in ages] 
+----
+friends = ["Rolf", "ruth", "Charlie", "Anne"]
+guests = ["jose", "Bob", "Rolf", "Charlie", "michael"]
+friends_lower = [f.lower() for f in friends]
+guests_lower = [g.lower() for g in guests]
+print(friends_lower.intersection(guests_lower))
+----
+或者
+present_friends = [
+    name for name in guests if name.lower() in friends_lower
+]
+
+Set comprehension:
+friends = ["Rolf", "ruth", "Charlie", "Anne"]
+guests = ["jose", "Bob", "Rolf", "Charlie", "michael"]
+friends_lower = set((n.lower() for n in friends))
+guests_lower = set((n.lower() for n in guests))
+print(friends_lower.intersection(guests_lower))
+或者我们用:
+friends_lower = {(n.lower() for n in friends)}
+guests_lower = {(n.lower() for n in guests)}
+present_friends = friends_lower.intersection(guests_lower)
+present_friends = {name.title} for name in present_friends}
+-------
+friends = ["Rolf", "Bob", "Jen", "Anne"]
+time_since_seen = [3, 7, 15, 11]
+long_timers = { #构建一个dictionary
+    friends[i] : time_since_seen[i] #key and #value
+    for i in range(len(friends))
+    if time_since_seen[i] > 5
+}
+print(long_timers)
+
+zip function: (but it would ignore any element that is not match)
+friends = ["Rolf", "Bob", "Jen", "Anne"]
+time_since_seen = [3, 7, 15, 11]
+long_timers = dict(zip(friends, time_since_seen)) #or we can have list(zip...)
+print(long_timers) #then it would be the dictionary
+
+enumerate function: #give the item and the counter 
+friends = ["Rolf", "John", "Anna"] 
+for counter, friend in enumerate(friends):
+    print(counter)
+    print(friend)
+print(list(enumerate(friends))) #转变成list of pairs
+print(list(enumerate(friends))) #dictionary of pairs
+或者设置start是1，那么key就是从1起: print(dict(enumerate(friends, start = 1)))
+
+tuple -> dict: 
+guests = [('rolf', 25), ('adam', 28), ('jen', 24)]
+print(dict(guests))
+
+Default parameters:
+print(add(5, y=2)) #valid, the first one do not have a name, but the second one can have
+print(add(x=5, 2)) #invalid, since the first argument have name, then the rest should have the name, like y=2
+
+print(1,2,3,4,5, sep = " - ") # sep is the special separator
+
+Lambda function:
+divide = lambda x, y : x / y #x, y are the input (after lambda keyword). 
+After the ":", it gives the return statement. divide is the function name
+Note: if there is no name for the function, python will immediately destroy it
+
+first-class function:
+def greet():
+    print("hello")
+hello = greet #assign greet to hello
+hello() #call hello等同于call greet
+------
