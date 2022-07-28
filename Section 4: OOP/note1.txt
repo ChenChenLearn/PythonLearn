@@ -1,0 +1,26 @@
+dunder function: 类似constructor
+
+self is the self object, 和this是一样的
+
+Everything in python is an object:
+e.g. movies = ['move1', 'move2']
+print(movies.__class__) => <class> list
+
+The class have "__len__(self)" methods for calculate the len of list.
+The class have "__getitem__(self, i) for get the item
+The class have "__repr__(self)" for print(for debugger), "__str__(self)"
+"__repr__(self)" for debug, programmer want to see, "__str__(self)" is for client to see
+
+How to inheritance: 
+class Student:
+    ...
+    ...
+class WorkingStudent(student): #This is the inheritance
+    ...
+    ...
+
+Using super for call parent class constructor: super().__init__(...)
+
+@property => then we can print(my_calculate), previous we have to do that my_calculate()
+
+@classmethod, @staticmethod
