@@ -1,0 +1,32 @@
+IndexError: accessing the index didn't exist
+会显示index out of range
+
+KeyError: the key didn't map with the key from dictionaries 
+
+NameError: 经常会因为忘了加"" or ' 'around的parameter.
+或者用了/call了parameter，但那些parameter没有define
+
+AttributeError: e.g. intersection是放到set里面用的，如果
+list里面用了这个api，就会产生这个error
+
+NotImplementedError: 如果一个api还没写，但如果有user call了的，就会raise 
+exception, 告诉user这个feature还没好
+
+RuntimeError: Base error, other error extend this one
+
+SyntaxError: 少了:, 少了某些符号
+
+IndentationError: 第二行没有空行
+
+TabError: 分清楚tab和space
+
+TypeError: 如果是5+'hi'这样的话, 是会有typeError的
+
+ValueError: 类似int('20.5'), 因为20.5不能是int
+
+ImportError: import的package是错误的, 或者两个file互相import
+
+DeprecationWarning: 告诉user这个api不是最好的call法
+
+在python，throw new Exception()这个java的写法，python会写raise Exception('')
+
